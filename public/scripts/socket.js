@@ -14,10 +14,11 @@ Swal.fire({
 
 // Cuando recibes todos los mensajes desde el servidor
 socket.on("all messages", (data) => {
-    // Mapear los mensajes y mostrarlos correctamente
-    const messagesHtml = data.map(
-        each => `<p class="bg-success text-white rounded p-2 mb-1"><strong>${each.username}</strong>: ${each.message}</p>`
-    ).join("");
+    const messagesHtml = data.map(each => {
+        // Verificar si el mensaje es del usuario actual o de otro
+        const messageClass = each.username === username ? 'sent' : 'received';
+        return `<p class="message ${messageClass}"><strong>${each.username}</strong>: ${each.message}</p>`;
+    }).join("");
     document.querySelector("#messages").innerHTML = messagesHtml;
 });
 

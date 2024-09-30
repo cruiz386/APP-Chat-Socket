@@ -13,6 +13,31 @@
             max-height: 400px;
             overflow-y: auto; /* Scroll si hay muchos mensajes */
         }
+
+        /* Estilo para los mensajes recibidos (de otros usuarios) */
+        .message.received {
+            background-color: #d1ecf1; /* Celeste claro */
+            border-left: 5px solid #0c5460; /* Borde celeste más oscuro */
+            color: #0c5460; /* Texto celeste oscuro */
+            border-radius: 5px;
+            padding: 10px;
+            margin-bottom: 10px;
+            max-width: 70%; /* Limitar el ancho del mensaje */
+            text-align: left;
+        }
+
+        /* Estilo para los mensajes enviados (por el usuario actual) */
+        .message.sent {
+            background-color: #d4edda; /* Verde claro */
+            border-right: 5px solid #155724; /* Borde verde más oscuro */
+            color: #155724; /* Texto verde oscuro */
+            border-radius: 5px;
+            padding: 10px;
+            margin-bottom: 10px;
+            max-width: 70%; /* Limitar el ancho del mensaje */
+            text-align: right;
+            margin-left: auto; /* Alinear a la derecha */
+        }
     </style>
 </head>
 
