@@ -22,6 +22,7 @@ httpServer.listen(port, ready); // levanto el server http pasando el puerto y la
 //tcp server -- socket
 const socketServer = new Server(httpServer);
 socketServer.on("connection", socketCb)  //Inicializamos el socket del servidor con el método on() punto de coneccion a nivel backend
+export  {socketServer}
 
 // templete engine -- motor de plantillas
 server.engine("handlebars", engine())
@@ -32,7 +33,7 @@ server.set("views", __dirname + "/src/views")
 server.use(express.urlencoded({ extended: true }))
 server.use(express.json())
 server.use(morgan("dev"))
-server.use("public", express.static(__dirname + "/public"))
+server.use( "/public", express.static(__dirname + "/public"))
 
 // endpoint -- routers
 server.use(router)

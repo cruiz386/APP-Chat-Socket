@@ -1,4 +1,36 @@
-<h1>Chat</h1>
+<!DOCTYPE html>
+<html lang="es">
 
-<script src="https://cdn.socket.io/4.7.5/socket.io.min.js"></script> 
-{{!-- funciona solo en esta vista -- habilita el punto de coneccion en el front--}}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Application</title>
+    <!-- Enlace a Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Estilo adicional para la sección de mensajes */
+        .messages {
+            max-height: 400px;
+            overflow-y: auto; /* Scroll si hay muchos mensajes */
+        }
+    </style>
+</head>
+
+<body class="bg-light">
+
+    <div class="container mt-5">
+        <h1 class="text-center">Chat</h1>
+        <section class="bg-white rounded shadow p-3">
+            <article id="messages" class="messages border rounded p-2 mb-3"></article>
+            <span id="username" class="d-block mb-2"></span>
+        </section>
+        <input type="text" class="form-control" id="text" placeholder="Type your message">
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!-- Enlace a Socket.io -->
+    <script src="https://cdn.socket.io/4.7.5/socket.io.min.js"></script>
+    <script src="/public/scripts/socket.js"></script>
+</body>
+
+</html>
